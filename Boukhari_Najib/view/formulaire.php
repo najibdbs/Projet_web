@@ -37,7 +37,6 @@
             <p class="required-text">*Champs obligatoires</p>
         </fieldset>
        
-      <!-- Ajoutez ceci dans la partie du formulaire -->
       <fieldset>
     <legend> Quel type de problème rencontrez-vous? </legend>
     <p class="form-field">
@@ -105,7 +104,7 @@
             <input type="submit" value="Envoyer" class="form-button" />
             <input type="reset" value="Effacer" class="form-button" id="resetButton" />
             <!-- Lien pour accéder directement à la page de connexion (login.php) -->
-<a href="../controller/login.php" id="connectDonneesButton" class="connect-button">Affichage demande</a>
+            <a href="../controller/login.php" id="connectDonneesButton" class="connect-button">Affichage demande</a>
         </div>
             </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Inclure jQuery avant les scripts utilisant jQuery -->
@@ -166,7 +165,6 @@ $(document).ready(function() {
         });
     }
 });
-
 
     // Fonction pour mettre à jour les options du menu déroulant "materiel" en fonction du type de problème sélectionné
     $(document).ready(function() {
