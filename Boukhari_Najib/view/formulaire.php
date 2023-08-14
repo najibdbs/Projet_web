@@ -92,7 +92,7 @@
             <fieldset>
     <legend> Degré d'urgence </legend>
     <div class="choix">
-        <input type="range" name="urgence" id="urgence" min="1" max="5" step="1" />
+        <input type="range" name="urgence" id="urgence" min="1" max="5" step="1" value="1" />
     </div>
     <p id="urgencePhrase">Très faible</p>
 </fieldset>
@@ -102,7 +102,7 @@
             
                 <textarea placeholder="Description détaillée de votre problème." name="remarque" class="form-textarea" style="FONT-SIZE: 12pt; WIDTH: 700px; height:150px; FONT-FAMILY: Calibri" rows=5> </textarea>
 
-    <div class="boutons">
+    <div class="button-container">
             <input type="submit" value="Envoyer" class="form-button" />
             <input type="reset" value="Effacer" class="form-button" id="resetButton" />
         </div>
@@ -122,7 +122,7 @@ $(document).ready(function() {
             siteSelect.empty();
             $.each(data, function(index, site) {
                 siteSelect.append($('<option>', {
-                    value: site.id_site,
+                    value: site.id,
                     text: site.nom_site
                 }));
             });
@@ -147,7 +147,7 @@ $(document).ready(function() {
         $.ajax({
             type: 'GET',
             url: '../controller/get_locaux.php', // Chemin vers le fichier PHP qui récupère les locaux
-            data: { site: site },
+            data: { idsite: site },
             dataType: 'json',
             success: function(data) {
                 var localSelect = $('#local');
@@ -214,7 +214,7 @@ $(document).ready(function() {
             });
         }
     });
-});nécessaire
+});
 
 
 $(document).ready(function() {
@@ -223,7 +223,6 @@ $(document).ready(function() {
     // Écoutez l'événement "submit" du formulaire
     $('form').on('submit', function(event) {
         event.preventDefault(); // Empêche l'envoi traditionnel du formulaire
-        
         // Récupérer les données du formulaire
         var formData = {
             email: $('input[name=email]').val(),
@@ -235,25 +234,25 @@ $(document).ready(function() {
             urgence: $('#urgence').val(),
             remarque: $('textarea[name=remarque]').val()
         };
+
         
         // Envoyer les données au serveur via AJAX
         $.ajax({
             type: 'POST',
             url: '../controller/traitement.php', // Modifiez l'URL ici
             data: formData,
+            dataType: 'text',
             success: function(response) {
-                // Vous pouvez ajouter ici un code pour gérer la réponse du serveur si nécessaire
-                
-                // Ne pas réinitialiser le formulaire ici
+                window.location.href = "confirmation.php?reference="+response;
             },
             error: function(xhr, status, error) {
                 console.error(error);
-                alert('Une erreur s\'est produite lors de l\'envoi de la demande.');
+                alert(error);
             }
         });
     });
 
-        const urgenceInput = document.getElementById('urgence');
+    const urgenceInput = document.getElementById('urgence');
     const urgencePhrase = document.getElementById('urgencePhrase');
     const choixDiv = document.querySelector('.choix');
 
