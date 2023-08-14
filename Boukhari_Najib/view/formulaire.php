@@ -8,8 +8,7 @@
 </head>
 <body>
 
-<!-- Lien pour accéder directement à la page de connexion (login.php) -->
-<a href="../controller/login.php" id="connectDonneesButton" class="connect-button">ConnecDonnées</a>
+
 <form action="../controller/traitement.php" method="POST" class="form-container">
 
         <fieldset>
@@ -83,10 +82,10 @@
             Cette étiquette est généralement collée sur le côté ou à l'arrière de la machine. Exemple: ordinateur, écran, projecteur, imprimante,...
             </p>
                 <img src="../public/Id i-city.jpg"alt="Image d'exemple" style="width: 200px;">
-           
+                
             <p class="form-field">
                 <label for="i-city">id:</label>
-                <input type="text" name="i-city" id="i-city" class="form-input" />
+                <input placeholder="Exemple: id095741"type="text" name="i-city" id="i-city" class="form-input" />
             </p>
 
             <fieldset>
@@ -105,6 +104,8 @@
     <div class="button-container">
             <input type="submit" value="Envoyer" class="form-button" />
             <input type="reset" value="Effacer" class="form-button" id="resetButton" />
+            <!-- Lien pour accéder directement à la page de connexion (login.php) -->
+<a href="../controller/login.php" id="connectDonneesButton" class="connect-button">Affichage demande</a>
         </div>
             </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Inclure jQuery avant les scripts utilisant jQuery -->
@@ -308,8 +309,7 @@ $('#resetButton').on('click', function(event) {
 
             // Écoutez l'événement "click" du bouton "ConnecDonnées"
             $('#connectDonneesButton').on('click', function() {
-                alert('Bouton "ConnecDonnées" cliqué !'); // Par exemple, montrez une alerte pour démonstration
-                // Ajoutez ici le code pour l'effet ou l'action que vous souhaitez réaliser
+                alert('Bouton "ConnecDonnées" cliqué !'); 
             });
         });
     
