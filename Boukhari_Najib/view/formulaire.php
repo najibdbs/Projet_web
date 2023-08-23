@@ -7,8 +7,7 @@
     
 </head>
 <body>
-
-
+<!--création un formulaire vers traitement.php --> 
 <form action="../controller/traitement.php" method="POST" class="form-container">
 
         <fieldset>
@@ -52,7 +51,7 @@
     <p class="form-field">
         <label for="materiel">Sélectionnez le matériel ou le type de problème :</label><br />
         <select name="materiel" id="materiel" title="Sélectionnez le matériel ou le type de problème">
-            <!-- Les options seront remplies dynamiquement par JavaScript -->
+            <!-- Les options seront remplies dynamiquement par JavaScript plus bas -->
         </select>
     </p>
 </fieldset>

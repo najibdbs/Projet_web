@@ -28,7 +28,7 @@
 
     <script>
         // Compteur de redirection
-        var seconds = 5; // Changer le nombre de secondes souhaité
+        var seconds = 5; 
         var countdown = document.getElementById('countdown');
 
         var timer = setInterval(function() {

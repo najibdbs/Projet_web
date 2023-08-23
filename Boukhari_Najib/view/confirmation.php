@@ -95,11 +95,11 @@
         }
         ?>
         
-        <!-- Ajouter le script pour la redirection automatique ici -->
+        <!-- Ajout le script pour la redirection automatique ici -->
         <script>
             setTimeout(function() {
                 window.location.href = '/index.php'; // Redirection vers la page d'accueil
-            }, 10000); // Redirection après 10 secondes (ajuster le délai si nécessaire)
+            }, 10000); // Redirection après 10 secondes 
         </script>
     </div>
 </body>
