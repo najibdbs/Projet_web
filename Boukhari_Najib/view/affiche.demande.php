@@ -7,17 +7,12 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #FFEFD5;
         }
 
         .demandes-container {
             background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 80%;
-            max-width: 1200px;
-            margin: 20px auto;
+            width: 100%;
+            overflow-x:auto;
         }
 
         h1 {
@@ -39,11 +34,11 @@
         }
 
         th {
-            background-color: #f7f7f7;
+            background-color: #C8C8C8;
         }
 
         tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: #FFFFFF;
         }
 
         .center-align {
