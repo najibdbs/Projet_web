@@ -105,14 +105,14 @@
                 echo '<td>' . $row['telephone'] . '</td>';
                 echo '<td>' . $row['problemetype'] . '</td>';
                 echo '<td>' . $row['materiel'] . '</td>';
-                echo '<td>' . $row['id_i_city'] . '</td>';
+                echo '<td>' . $row['id'] . '</td>';
                 echo '<td>' . $row['local'] . '</td>';
                 echo '<td>' . $row['degre_urgence'] . '</td>';
                 echo '<td>' . $row['description'] . '</td>';
                 echo '<td>' . $row['objet'] . '</td>';
                 echo '<td>' . $row['statut'] . '</td>';
                 echo '<td>' . $row['date'] . '</td>';
-                echo '<td>' . $row['numero_ticket_i_city'] . '</td>';
+                echo '<td>' . $row['numero_ticket'] . '</td>';
                 echo '</tr>';
             }
             echo '</table>';

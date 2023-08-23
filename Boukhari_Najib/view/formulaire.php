@@ -13,16 +13,15 @@
 
         <fieldset>
             <legend class="important-legend"> /!\ Information importante /!\ </legend>
-            <p>Cher membre de la communauté Ferrer,</p>
-            <p>Si vous avez des difficultés pour vous connecter à vos outils Ferrer, vérifiez que vous avez bien validé l’authentification à doubles facteurs. Il suffit de vous rendre sur <a href="https://www.office.com">Office365</a>, de vous reconnecter avec votre compte Ferrer et de suivre la procédure affichée à l’écran.</p>
+            <p>Cher membre de la communauté H2B,</p>
+            <p>Si vous avez des difficultés pour vous connecter à vos outils H2B, vérifiez que vous avez bien validé l’authentification à doubles facteurs. Il suffit de vous rendre sur <a href="https://poesi.esi-bru.be/">poesi.esi</a>, de vous reconnecter avec votre compte he2b et de suivre la procédure affichée à l’écran.</p>
             <p>Cela permettra au service informatique de répondre plus efficacement et rapidement aux demandes les plus problématiques.</p>
         </fieldset>
 
         <fieldset>
             <legend> Vos coordonnées </legend>
-            <p class="form-field">
-                <label for="email">Adresse mail ferrer:</label>
-                <input name="email" type="email" class="form-input form-input-required" placeholder='"@he-ferrer.eu" ou "@stu.he-ferrer.eu"' title="Introduire une adresse mail ferrer, champs obligatoire." pattern=".+@he-ferrer.eu|.+@stu.he-ferrer.eu" required/>
+            <p class="form-field">H2B:</label>
+                <input name="email" type="email" class="form-input form-input-required" placeholder='"@he-etu.he2b.be" ' title="Introduire une adresse mail he2b, champs obligatoire." pattern=".+@he-ferrer.eu|.+@stu.he-ferrer.eu" required/>
                 <span class="required-indicator">*</span>
             </p>
             <p class="form-field">
@@ -76,11 +75,11 @@
         </fieldset>
 
         <fieldset>
-            <legend> Veuillez entrer l'id i-city, si existant: </legend>
+            <legend> Veuillez entrer l'id, si existant: </legend>
             <p>
             Cette étiquette est généralement collée sur le côté ou à l'arrière de la machine. Exemple: ordinateur, écran, projecteur, imprimante,...
             </p>
-                <img src="../public/Id i-city.jpg"alt="Image d'exemple" style="width: 200px;">
+                
                 
             <p class="form-field">
                 <label for="i-city">id:</label>
@@ -107,6 +106,11 @@
             <a href="../controller/login.php" id="connectDonneesButton" class="connect-button">Affichage demande</a>
         </div>
             </form>
+
+            <footer class="footer-container">
+    <p>&copy;2023 par Najib. Tous droits réservés.</p>
+</footer>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Inclure jQuery avant les scripts utilisant jQuery -->
     
 <script>
