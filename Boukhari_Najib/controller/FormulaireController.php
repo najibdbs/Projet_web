@@ -29,7 +29,6 @@ class FormulaireController
             $formulaireModel->setProblemType($_POST['problemtype']);
             $formulaireModel->setMateriel($_POST['materiel']);
             $formulaireModel->setLocal($_POST['local']);
-            $formulaireModel->setGial($_POST['gial']);
             $formulaireModel->setUrgence($_POST['urgence']);
             $formulaireModel->setRemarque($_POST['remarque']);
 

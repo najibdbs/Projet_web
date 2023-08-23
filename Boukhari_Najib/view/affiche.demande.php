@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">   
     <style>
-            body {
+     body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            background-color: #FFEFD5;
         }
 
         .demandes-container {
@@ -22,16 +17,19 @@
             padding: 20px;
             width: 80%;
             max-width: 1200px;
+            margin: 20px auto;
         }
 
         h1 {
             color: #333;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 10px;
         }
 
         th, td {
@@ -46,6 +44,10 @@
 
         tr:nth-child(even) {
             background-color: #f2f2f2;
+        }
+
+        .center-align {
+            text-align: center;
         }
 
         .button-container {
@@ -68,16 +70,12 @@
         .return-button:hover {
             background-color: #2980b9;
         }
-    
-    </style>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-    <title>Afficher les Demandes</title>
+</style>
+
 </head>
 <body>
     <div class="demandes-container">
         <h1>Liste des Demandes Encodées</h1>
-        
         <?php
         // Inclure le fichier de configuration pour la connexion à la base de données
         require_once "../config/configB.php";
@@ -96,7 +94,7 @@
 
         if ($result->num_rows > 0) {
             echo '<table>';
-            echo '<tr><th>ID</th><th>Email</th><th>Email Personnel</th><th>Téléphone</th><th>Type de Problème</th><th>Matériel</th><th>ID i-City</th><th>Local</th><th>Degré d\'Urgence</th><th>Description</th><th>Objet</th><th>Statut</th><th>Date</th><th>Numéro Ticket i-City</th></tr>';
+            echo '<tr><th>ID</th><th>Email</th><th>Email Personnel</th><th>Téléphone</th><th>Type de Problème</th><th>Matériel</th><th>ID Machine</th><th>Local</th><th>Degré d\'Urgence</th><th>Description</th><th>Objet</th><th>Statut</th><th>Date</th><th>Numéro Ticket</th></tr>';
             while ($row = $result->fetch_assoc()) {
                 echo '<tr>';
                 echo '<td>' . $row['id'] . '</td>';
@@ -105,7 +103,7 @@
                 echo '<td>' . $row['telephone'] . '</td>';
                 echo '<td>' . $row['problemetype'] . '</td>';
                 echo '<td>' . $row['materiel'] . '</td>';
-                echo '<td>' . $row['id'] . '</td>';
+                echo '<td>' . $row['id_machine'] . '</td>';
                 echo '<td>' . $row['local'] . '</td>';
                 echo '<td>' . $row['degre_urgence'] . '</td>';
                 echo '<td>' . $row['description'] . '</td>';

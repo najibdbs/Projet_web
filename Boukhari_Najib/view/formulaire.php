@@ -21,7 +21,7 @@
         <fieldset>
             <legend> Vos coordonnées </legend>
             <p class="form-field">H2B:</label>
-                <input name="email" type="email" class="form-input form-input-required" placeholder='"@he-etu.he2b.be" ' title="Introduire une adresse mail he2b, champs obligatoire." pattern=".+@he-ferrer.eu|.+@stu.he-ferrer.eu" required/>
+                <input name="email" type="email" class="form-input form-input-required" placeholder='votre_identifiant@etu.he2b.be ' title="Introduire une adresse mail he2b, champs obligatoire." pattern=".+@etu.he2b.be" required/>
                 <span class="required-indicator">*</span>
             </p>
             <p class="form-field">

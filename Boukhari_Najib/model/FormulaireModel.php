@@ -9,7 +9,6 @@ class FormulaireModel
     private $problemType;
     private $materiel;
     private $local;
-    private $gial;
     private $urgence;
     private $remarque;
 
@@ -23,7 +22,6 @@ class FormulaireModel
         $this->problemType = '';
         $this->materiel = '';
         $this->local = '';
-        $this->gial = '';
         $this->urgence = 1; // Par défaut, on initialise à "Moins urgent" (valeur 1)
         $this->remarque = '';
     }
@@ -87,16 +85,6 @@ class FormulaireModel
     public function setLocal($local)
     {
         $this->local = $local;
-    }
-
-    public function getGial()
-    {
-        return $this->gial;
-    }
-
-    public function setGial($gial)
-    {
-        $this->gial = $gial;
     }
 
     public function getUrgence()
