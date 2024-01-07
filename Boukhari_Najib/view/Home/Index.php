@@ -19,26 +19,29 @@
 
         <fieldset>
             <legend> Vos coordonnées </legend>
-            <p class="form-field">H2B:</label>
-                <input name="email" type="email" class="form-input form-input-required" placeholder='votre_identifiant@etu.he2b.be ' title="Introduire une adresse mail he2b, champs obligatoire." pattern=".+@etu.he2b.be" required/>
-                <span class="required-indicator">*</span>
-            </p>
-            <p class="form-field">
-                <label for="emailperso">Adresse mail personnelle:</label>
-                <input placeholder="Exemple: adresse@gmail.com" name="emailperso" type="email" class="form-input" title="Introduire une adresse mail personelle, facultatif."/>
-            </p>
-            <p class="form-field">
-                <label for="tel">Numéro de téléphone:</label>
-                <input name="tel" type="tel" class="form-input form-input-required" placeholder="Votre numéro de téléphone" required/>
-                <span class="required-indicator">*</span>
-            </p>
-            <p class="required-text">*Champs obligatoires</p>
-        </fieldset>
+            <div class="form-field">
+        
+            <label for="h2b">H2B:</label>
+            <input name="email" type="email" class="form-field form-input-required" placeholder='votre_identifiant@etu.he2b.be ' title="Introduire une adresse mail he2b, champs obligatoire." pattern=".+@etu.he2b.be" required/>
+            <span class="required-indicator">*</span>
+        </p>
+        <p>
+            <label for="emailperso">Adresse mail personnelle:</label>
+            <input placeholder="Exemple: adresse@gmail.com" name="emailperso" type="email" class="form-field" title="Introduire une adresse mail personelle, facultatif."/>
+        </p>
+        <p>
+            <label for="tel">Numéro de téléphone:</label>
+            <input name="tel" type="tel" class="form-field form-input-required" placeholder="Votre numéro de téléphone" required/>
+            <span class="required-indicator">*</span>
+        </p>
+    </div>
+    <p class="required-text">*Champs obligatoires</p>
+</fieldset>
        
       <fieldset>
     <legend> Quel type de problème rencontrez-vous? </legend>
     <p class="form-field">
-        <label for="problemtype">S'agit-il d'un problème physique (Ecran cassé, clavier cassé, ordinateur ne s'allume plus,...) ? ou logiciel(absence d'un logiciel, impossibilité de lancer un logiciel, ouvrir un fichier,...)</label>
+        <label for="problemtype">S'agit-il d'un problème physique (Ecran cassé, clavier cassé, ordinateur ne s'allume plus,...) ? ou logiciel(absence d'un logiciel, impossibilité de lancer un logiciel, ouvrir un fichier,...)</label><br/>
         <select name="problemtype" id="problemtype" title="S'agit-il d'un problème physique (Ecran cassé, clavier cassé, ordinateur ne s'allume plus,...) ? ou logiciel(absence d'un logiciel, impossibilité de lancer un logiciel, ouvrir un fichier,...)">
             <option value="Logiciel">Logiciel</option>
             <option value="Materiel">Matériel</option>
@@ -47,7 +50,7 @@
 </fieldset>
 
 <fieldset>
-    <legend> Sélectionnez le matériel ou le type de problème </legend>
+    <legend> Sélectionnez le matériel ou le logiciel </legend>
     <p class="form-field">
         <label for="materiel">Sélectionnez le matériel ou le type de problème :</label><br />
         <select name="materiel" id="materiel" title="Sélectionnez le matériel ou le type de problème">
@@ -87,16 +90,20 @@
 
             <fieldset>
     <legend> Degré d'urgence </legend>
-    <div class="choix">
-        <input type="range" name="urgence" id="urgence" min="1" max="5" step="1" value="1" />
-    </div>
-    <p id="urgencePhrase">Très faible</p>
+    <p>
+               <label for="urgence">Niveau d'urgence :</label>
+                <select id="urgence" name="urgence">
+                    <option value="1">Faible</option>
+                    <option value="2">Moyen</option>
+                    <option value="3">Urgent</option>
+                </select>
+            </p>
 </fieldset>
 
 
             <legend> Décrivez votre problème </legend>
             
-                <textarea placeholder="Description détaillée de votre problème." name="remarque" class="form-textarea" style="FONT-SIZE: 12pt; WIDTH: 700px; height:150px; FONT-FAMILY: Calibri" rows=5> </textarea>
+                <input placeholder="Description détaillée de votre problème." name="description" class="form-textarea" style="FONT-SIZE: 12pt; WIDTH: 700px; height:150px; FONT-FAMILY: Calibri" rows=5/>
 
     <div class="button-container">
             <input type="submit" value="Envoyer" class="form-button" />
@@ -118,7 +125,7 @@ $(document).ready(function() {
     // Remplir le menu déroulant des sites au chargement de la page
     $.ajax({
         type: 'GET',
-        url: '../controller/get_sites.php', // Chemin vers le fichier PHP qui récupère les sites
+        url: '../controller/ControllerSites.php', // Chemin vers le fichier PHP qui récupère les sites
         dataType: 'json',
         success: function(data) {
             var siteSelect = $('#site');
@@ -149,7 +156,7 @@ $(document).ready(function() {
     function getLocauxBySite(site) {
         $.ajax({
             type: 'GET',
-            url: '../controller/get_locaux.php', // Chemin vers le fichier PHP qui récupère les locaux
+            url: '../controller/ControllerLocaux.php', // Chemin vers le fichier PHP qui récupère les locaux
             data: { idsite: site },
             dataType: 'json',
             success: function(data) {
@@ -179,10 +186,10 @@ $(document).ready(function() {
         $('#materiel').empty();
         
         if (selectedProblemType === 'Logiciel') {
-            // Appeler le fichier get_logiciels.php pour obtenir les options de logiciels
+            // Appeler le fichier ControllerLogiciels.php pour obtenir les options de logiciels
             $.ajax({
                 type: 'GET',
-                url: '../controller/get_logiciels.php', // Chemin vers le fichier PHP qui récupère les options de logiciels
+                url: '../controller/ControllerLogiciels.php', // Chemin vers le fichier PHP qui récupère les options de logiciels
                 dataType: 'json',
                 success: function(data) {
                     $.each(data, function(index, logiciel) {
@@ -200,7 +207,7 @@ $(document).ready(function() {
             // Appeler le fichier get_materiels.php pour obtenir les options de matériel
             $.ajax({
                 type: 'GET',
-                url: '../controller/get_materiels.php', // Chemin vers le fichier PHP qui récupère les options de matériel
+                url: '../controller/ControllerMateriels.php', // Chemin vers le fichier PHP qui récupère les options de matériel
                 dataType: 'json',
                 success: function(data) {
                     $.each(data, function(index, materiel) {
@@ -220,9 +227,7 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-
-    
-    // Écoutez l'événement "submit" du formulaire
+   
     $('form').on('submit', function(event) {
         event.preventDefault(); // Empêche l'envoi traditionnel du formulaire
         // Récupérer les données du formulaire
@@ -230,22 +235,22 @@ $(document).ready(function() {
             email: $('input[name=email]').val(),
             emailperso: $('input[name=emailperso]').val(),
             tel: $('input[name=tel]').val(),
-            problemtype: $('#problemtype').val(),  // Ajoutez les autres champs de la même manière
+            problemtype: $('#problemtype').val(),  
             materiel: $('#materiel').val(),
             local: $('#local').val(),
             urgence: $('#urgence').val(),
-            remarque: $('textarea[name=remarque]').val()
+            description: $('textarea[name=description]').val()
         };
-
         
         // Envoyer les données au serveur via AJAX
         $.ajax({
             type: 'POST',
-            url: '../controller/traitement.php', // Modifiez l'URL ici
+            url: '../controller/ControllerTraitement.php', // envoi du traitement
             data: formData,
             dataType: 'text',
             success: function(response) {
-                window.location.href = "confirmation.php?reference="+response;
+                window.location.href = "../view/confirmation.php?reference=" + response;
+
             },
             error: function(xhr, status, error) {
                 console.error(error);
@@ -254,50 +259,7 @@ $(document).ready(function() {
         });
     });
 
-    const urgenceInput = document.getElementById('urgence');
-    const urgencePhrase = document.getElementById('urgencePhrase');
-    const choixDiv = document.querySelector('.choix');
-
-    urgenceInput.addEventListener('input', () => {
-        const value = urgenceInput.value;
-        choixDiv.style.background = getUrgenceColor(value);
-        urgencePhrase.textContent = getUrgencePhrase(value);
-    });
-
-    function getUrgenceColor(value) {
-        switch (value) {
-            case '1':
-                return 'green'; // Très faible
-            case '2':
-                return 'lightyellow'; // Faible
-            case '3':
-                return 'orange'; // Moyen
-            case '4':
-                return 'lightcoral'; // Urgent
-            case '5':
-                return 'darkred'; // Très urgent
-            default:
-                return '#d3d3d3'; // Couleur par défaut pour une valeur invalide ou non définie
-        }
-    }
-
-    function getUrgencePhrase(value) {
-        switch (value) {
-            case '1':
-                return 'Très faible';
-            case '2':
-                return 'Faible';
-            case '3':
-                return 'Moyen';
-            case '4':
-                return 'Urgent';
-            case '5':
-                return 'Très urgent';
-            default:
-                return '';
-        }
-    }
-// Écoutez l'événement "click" du bouton Effacer
+//"click" du bouton Effacer
 $('#resetButton').on('click', function(event) {
     var confirmReset = confirm('Voulez-vous vraiment effacer le formulaire ? Cette action est irréversible.');
     if (!confirmReset) {

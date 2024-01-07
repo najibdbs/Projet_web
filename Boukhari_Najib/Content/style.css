@@ -1,78 +1,50 @@
-/* Effet du formulaire */
+/* Améliorations visuelles du site */
+
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #5A5E6B;
+    background-color: #f0f0f0; 
     margin: 0;
     padding: 0;
     background-image: url('../public/service-desk-informatique-.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    color: #333; 
 }
 
+/* Form-container */
 .form-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95); /* Légèrement plus opaque pour améliorer la lisibilité du texte */
+    border: 1px solid #cccccc;
+    border-radius: 5px; /* Plus grand pour un aspect plus moderne */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Ombre plus prononcée */
 }
 
-.form-container legend {
-    color:  Ardoise;
-    font-weight: bold;
-    font-size: 24px; /* Taille de police pour la légende */
-    margin-bottom: 10px; /* Espacement sous la légende */
-}
-
+/* Form-field */
 .form-field {
-    margin-bottom: 15px;
-}
-
-.form-input {
-    padding: 8px;
-    width: 100%;
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px; /* Taille de police pour les champs de saisie */
+    border-radius: 6px; /* Légèrement plus arrondi pour un aspect plus doux */
+    font-size: 14px; /* Augmentation de la taille de police pour une meilleure lisibilité */
 }
 
-.form-input-required {
-    border-color: #ff0000;
-}
-
-.required-indicator {
-    color: red;
-    font-weight: bold;
-    margin-left: 5px;
-}
-
-.required-text {
-    color: red;
-}
-
-.form-select {
-    padding: 8px;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-    font-size: 14px; /* Taille de police pour les champs de sélection */
-}
-
-.form-textarea {
-    padding: 8px;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px; /* Taille de police pour la zone de texte */
-}
-
-.button-container {
+/* Styles de base pour les boutons */
+.form-button, .connect-button {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px;
+    width: 150px; /* Largeur fixe pour tous les boutons */
     text-align: center;
-    margin-top: 10px;
+    font-size: 16px; /* Taille de police uniforme pour les boutons */
+    border-radius: 25px; /* Bord arrondi pour un look moderne */
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out; /* Transition douce pour les effets */
 }
 
 .form-button {
@@ -89,61 +61,36 @@ body {
     font-size: 16px; /* Taille de police pour les boutons */
 }
 
+/* Styles spécifiques pour les différents types de boutons */
 .form-button[type="reset"] {
     background-color: #FF0000;
 }
 
 .connect-button {
     background-color: #2a63a0;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
-    position: relative;
-    overflow: hidden;
+    border-radius: 5px; /* Bord moins arrondi pour différencier les boutons */
 }
 
-.connect-button:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
-    transform: skewX(-45deg);
-    transition: left 0.3s ease-in-out;
-}
-
+/* Suppression de l'effet de survol calqué */
 .connect-button:hover {
     background-color: #0056b3;
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.connect-button:hover:before {
-    left: 100%;
+    transform: scale(1.05); /* Légère augmentation de taille au survol */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Ombre portée pour le relief */
 }
 
 .connect-button:active {
     background-color: #003080;
-    transform: scale(0.95);
+    transform: scale(0.95); /* Légère réduction de taille lors du clic */
 }
 
-/* Styles pour le texte à l'intérieur du bouton */
-.connect-button span {
-    position: relative;
-    z-index: 1;
-}
-
+/* Centrage des boutons dans leur conteneur */
 .footer-container {
-    text-align: center;
+    text-align: center; /* Centrage du texte et des éléments inline */
     margin-top: 10px;
     color: #FF0000;
 }
 
-
-
+/* Ajout d'un conteneur pour centrer les boutons */
+.button-container {
+    text-align: center; /* Centrage des boutons */
+}

@@ -79,28 +79,26 @@
 </head>
 <body>
 <div class="confirmation-container">
-        <h1>Merci d'avoir pris le temps de remplir notre formulaire</h1>
-        
-        <?php
-        // Générer un ID unique avec incrémentation automatique
-        $id = uniqid();
-        
-        // Vérifier s'il y a un paramètre de référence dans l'URL
-        if (isset($_GET['reference'])) {
-            $reference = $_GET['reference'];
-            echo '<p class="success-message">Nous vous remercions d\'avoir soumis votre demande avec succès.</p>';
-            echo '<p>Veuillez noter attentivement votre <strong>numéro de référence</strong> :</p>';
-            echo '<p class="reference-number">' . $reference . '</p>';
-            echo '<p class="info-message">Ce numéro sera essentiel pour suivre l\'avancement de votre demande. Veuillez le conserver soigneusement.</p>';
-        }
-        ?>
-        
-        <!-- Ajout le script pour la redirection automatique ici -->
-        <script>
-            setTimeout(function() {
-                window.location.href = '/index.php'; // Redirection vers la page d'accueil
-            }, 10000); // Redirection après 10 secondes 
-        </script>
-    </div>
+    <h1>Merci d'avoir pris le temps de remplir notre formulaire</h1>
+    
+    <?php
+ if (isset($_GET['reference'])) {
+    $reference = $_GET['reference'];
+?>
+
+    <p class="success-message">Nous vous remercions d'avoir soumis votre demande avec succès.</p>
+    <p>Veuillez noter attentivement votre <strong>numéro de référence</strong> :</p>
+    <p class="reference-number"><?= htmlspecialchars($reference) ?></p>
+    <p class="info-message">Ce numéro sera essentiel pour suivre l'avancement de votre demande. Veuillez le conserver soigneusement.</p>
+<?php } else {
+    echo "Numéro de référence manquant.";
+}
+    ?>
+    <script>
+        setTimeout(function() {
+            window.location.href = "../index.php" ; // Redirection vers la page d'accueil
+        }, 10000); // Redirection après 10 secondes 
+    </script>
+</div>
 </body>
 </html>
