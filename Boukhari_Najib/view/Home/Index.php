@@ -8,7 +8,7 @@
 </head>
 <body>
 <!--création un formulaire vers traitement.php --> 
-<form action="../controller/traitement.php" method="POST" class="form-container">
+<form action="../controller/ControllerTraitement" method="POST" class="form-container">
 
         <fieldset>
             <legend class="important-legend"> /!\ Information importante /!\ </legend>
@@ -84,9 +84,10 @@
                 
                 
             <p class="form-field">
-                <label for="i-city">id:</label>
-                <input placeholder="Exemple: id095741"type="text" name="i-city" id="i-city" class="form-input" />
-            </p>
+    <label for="id_machine">ID Machine :</label>
+    <input placeholder="Exemple : id095741" type="text" name="id_machine" id="id_machine" class="form-input" />
+</p>
+
 
             <fieldset>
     <legend> Degré d'urgence </legend>
@@ -239,7 +240,8 @@ $(document).ready(function() {
             materiel: $('#materiel').val(),
             local: $('#local').val(),
             urgence: $('#urgence').val(),
-            description: $('textarea[name=description]').val()
+            description: $('input[name=description]').val(),
+            id_machine: $('input[name=id_machine]').val()
         };
         
         // Envoyer les données au serveur via AJAX

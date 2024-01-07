@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $problemtype = $_POST["problemtype"] ?? null;
     $materiel = $_POST["materiel"] ?? null;
     $local = $_POST["local"] ?? null;
+    $id_machine = $_POST["id_machine"] ?? null;
     $urgence = $_POST["urgence"] ?? null;
     $description = $_POST["description"] ?? null;
 
@@ -26,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Création d'une instance de DemandeModel et appel de la méthode createDemande
     $demandeModel = new DemandeModel($conn);
-    $reference = $demandeModel->createDemande($email, $emailperso, $tel, $problemtype, $materiel, $local, $urgence, $description);
+    $reference = $demandeModel->createDemande($email, $emailperso, $tel, $problemtype, $materiel, $local, $urgence, $description, $id_machine);
    //var_dump($reference); 
     //exit;
     if ($reference) {

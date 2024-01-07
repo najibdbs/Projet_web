@@ -147,7 +147,7 @@
                         <td><?php echo htmlspecialchars($demande['date']); ?></td>
                         <td>
     <a href="/Controller/ControllerEditer.php?id=<?php echo htmlspecialchars($demande['id']); ?>">Éditer</a>
-</td> <!-- Ajoutez cette ligne dans chaque boucle de demande -->
+</td> 
                     </tr>
                 <?php endforeach; ?>
             </table>
