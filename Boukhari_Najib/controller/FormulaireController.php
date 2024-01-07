@@ -1,7 +1,7 @@
 <?php
 
 // Inclure le fichier contenant la classe FormulaireModel
-require_once 'model/FormulaireModel.php';
+require_once '../model/FormulaireModel.php';
 
 
 class FormulaireController
@@ -12,7 +12,7 @@ class FormulaireController
         $formulaireModel = new FormulaireModel();
 
         // Afficher la vue du formulaire en utilisant les propriétés du modèle
-        require 'view/formulaire.php';
+        require 'view/Home/Index.php';
     }
 
     public function traiterFormulaire()
@@ -30,7 +30,7 @@ class FormulaireController
             $formulaireModel->setMateriel($_POST['materiel']);
             $formulaireModel->setLocal($_POST['local']);
             $formulaireModel->setUrgence($_POST['urgence']);
-            $formulaireModel->setRemarque($_POST['remarque']);
+            $formulaireModel->setDescription($_POST['description']);
 
           
 
@@ -39,7 +39,7 @@ class FormulaireController
             exit();
         } else {
             // Si le formulaire n'a pas été soumis, rediriger l'utilisateur vers la page du formulaire
-            header('Location: index.php?action=afficherFormulaire');
+            header('Location: /vieuw/Home/Index.php?action=afficherFormulaire');
             exit();
         }
     }
