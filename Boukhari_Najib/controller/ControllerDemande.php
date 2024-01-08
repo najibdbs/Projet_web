@@ -2,6 +2,7 @@
 
 require_once '../model/DemandeModel.php';
 
+// Déclaration de la classe du contrôleur
 class ControllerDemande {
     private $model;
 

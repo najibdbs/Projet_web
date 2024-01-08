@@ -1,5 +1,6 @@
 <?php 
 
+// Déclaration de la classe du contrôleur
 class ControllerConfirmation {
     public function showConfirmation() {
         // Ici, la logique pour obtenir le numéro de référence.

@@ -1,12 +1,11 @@
 <?php 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-ob_start();  
-// ControllerTraitement.php
+
+// Initialiser ou reprendre la session PHP
 session_start();
 require_once '../config/configB.php';
 require_once '../model/DemandeModel.php';
 
+// Vérifier si la requête est de type POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Récupération et validation des données POST
     $email = $_POST["email"]; 
