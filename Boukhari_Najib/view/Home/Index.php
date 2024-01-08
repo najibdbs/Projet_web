@@ -271,11 +271,6 @@ $('#resetButton').on('click', function(event) {
         $('form')[0].reset();
     }
 });
-
-            // Écoutez l'événement "click" du bouton "ConnecDonnées"
-            $('#connectDonneesButton').on('click', function() {
-                alert('Bouton "ConnecDonnées" cliqué !'); 
-            });
         });
     
 </script>

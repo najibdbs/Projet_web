@@ -21,6 +21,5 @@
     </footer>
 
     <script src="/js/form-scripts.js"></script> <!-- Lien vers le JavaScript -->
-    <!-- Ajoutez d'autres scripts si nécessaire -->
 </body>
 </html>
