@@ -110,7 +110,7 @@
             <input type="submit" value="Envoyer" class="form-button" />
             <input type="reset" value="Effacer" class="form-button" id="resetButton" />
             <!-- Lien pour accéder directement à la page de connexion (login.php) -->
-            <a href="../controller/ControllerLogin.php" id="connectDonneesButton" class="connect-button">Affichage demande</a>
+            <a href="../controller/login.php" id="connectDonneesButton" class="connect-button">Affichage demande</a>
         </div>
             </form>
 
