@@ -1,6 +1,5 @@
 <?php
 
-
 // Informations d'accès à la base de données
 $host = "localhost";
 $dbname = "mon_formulaire";

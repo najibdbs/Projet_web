@@ -1,6 +1,6 @@
 <?php
-// model/ProblemesModel.php
 
+// Instancier le modèle ProblemesModel
 class ProblemesModel {
     private $pdo;
 

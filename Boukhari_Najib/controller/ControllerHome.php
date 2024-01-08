@@ -2,7 +2,7 @@
 // ControllerHome.php dans le dossier controller/
 
 require_once 'framework/Controller.php';
-require_once 'model/Home.Model.php'; // modèle pour la page d'accueil
+//require_once 'model/Home.Model.php'; // modèle pour la page d'accueil
 
 class ControllerHome extends Controller
 {

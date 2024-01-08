@@ -1,5 +1,6 @@
 <?php 
 
+// Instancier le modèle LogicielsModel
 class LogicielsModel {
     private $pdo;
 

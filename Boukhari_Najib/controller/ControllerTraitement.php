@@ -9,15 +9,15 @@ require_once '../model/DemandeModel.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Récupération et validation des données POST
-    $email = $_POST["email"] ?? null; // Remplacez ?? null par une valeur par défaut appropriée si nécessaire
-    $emailperso = $_POST["emailperso"] ?? null;
-    $tel = $_POST["tel"] ?? null;
-    $problemtype = $_POST["problemtype"] ?? null;
-    $materiel = $_POST["materiel"] ?? null;
-    $local = $_POST["local"] ?? null;
-    $id_machine = $_POST["id_machine"] ?? null;
-    $urgence = $_POST["urgence"] ?? null;
-    $description = $_POST["description"] ?? null;
+    $email = $_POST["email"]; 
+    $emailperso = $_POST["emailperso"];
+    $tel = $_POST["tel"];
+    $problemtype = $_POST["problemtype"];
+    $materiel = $_POST["materiel"];
+    $local = $_POST["local"];
+    $id_machine = $_POST["id_machine"];
+    $urgence = $_POST["urgence"];
+    $description = $_POST["description"];
 
     // Création d'une instance de la connexion à la base de données
     $conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);

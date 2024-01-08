@@ -12,7 +12,7 @@ class ControllerDemande {
     public function index() {
         // Afficher la liste des demandes
         $demandes = $this->model->getAllDemandes();
-        require_once '../view/affiche.demande.php';
+        require_once '../view/affiche.demande.php';  // Appeler la vue avec les données nécessaires 
     }
 
     public function edit() {

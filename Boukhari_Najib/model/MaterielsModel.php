@@ -1,5 +1,6 @@
 <?php
 
+// Instancier le modèle MaterielsModel
 class MaterielsModel {
     private $pdo;
 

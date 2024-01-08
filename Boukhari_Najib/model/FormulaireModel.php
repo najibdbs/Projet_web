@@ -1,5 +1,6 @@
 <?php
 
+// Instancier le modèle FormulaireModel
 class FormulaireModel
 {
     // Propriétés pour stocker les données du formulaire

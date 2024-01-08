@@ -48,7 +48,7 @@
 </head>
 <body>
     <?php
-    require_once "../config/configB.php"; // Votre fichier de configuration
+    require_once "../config/configB.php"; // fichier de configuration
 
     $conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
     if ($conn->connect_error) {

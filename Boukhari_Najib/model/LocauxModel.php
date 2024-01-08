@@ -1,5 +1,6 @@
 <?php
 
+// Instancier le modèle LocauxModel
 class LocauxModel {
     private $pdo;
 

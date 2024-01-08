@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-<!-- Votre code HTML pour le formulaire de connexion -->
+
 <form action="demandes.php" method="POST">
     <div class="form-field">
         <label for="login">Nom d'utilisateur:</label>

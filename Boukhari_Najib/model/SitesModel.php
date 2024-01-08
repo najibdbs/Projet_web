@@ -1,5 +1,6 @@
 <?php
 
+// Instancier le modèle SitesModel
 class SitesModel {
     private $pdo;
 

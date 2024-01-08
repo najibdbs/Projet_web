@@ -1,5 +1,6 @@
 <?php 
 
+// Instancier le modèle DemandeModel
 class DemandeModel {
     private $db;
 
