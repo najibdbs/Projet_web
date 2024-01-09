@@ -59,6 +59,10 @@
             text-align: center;
             margin-top: 20px;
         }
+        .button-creat {
+            text-align: center;
+            margin-top: 20px;
+        }
 
         .return-button, a {
             background-color: #3498db;
@@ -109,11 +113,8 @@
         } else {
             $demandes = [];
         }
-
-        // Fermer la connexion à la base de données
         $conn->close();
         ?>
-
         <?php if (!empty($demandes)): ?>
             <table>
                 <tr>
