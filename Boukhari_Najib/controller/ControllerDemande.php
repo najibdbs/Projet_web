@@ -2,7 +2,6 @@
 
 require_once '../model/DemandeModel.php';
 
-// Déclaration de la classe du contrôleur
 class ControllerDemande {
     private $model;
 
@@ -11,13 +10,32 @@ class ControllerDemande {
     }
 
     public function index() {
-        // Afficher la liste des demandes
+        // Logique pour afficher la liste des demandes
         $demandes = $this->model->getAllDemandes();
-        require_once '../view/affiche.demande.php';  // Appeler la vue avec les données nécessaires 
+        require_once '../view/affiche.demande.php';
     }
 
     public function edit() {
         // Logique pour éditer une demande
     }
+
+    public function login() {
+        session_start();
+        $errorMessage = "";
+
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $login = $_POST["login"];
+            $password = $_POST["password"];
+
+            if ($login == "superadmin" && $password == "aDmin@2024") {
+                $_SESSION["authenticated"] = true;
+                header("Location: ../view/affiche.demande.php");
+                exit();
+            } else {
+                $errorMessage = "Nom d'utilisateur ou mot de passe incorrect.";
+            }
+        }
+
+        require_once '../view/login.php';
+    }
 }
-?>

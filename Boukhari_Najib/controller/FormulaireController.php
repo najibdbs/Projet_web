@@ -1,4 +1,4 @@
-<?php
+?php
 
 // Inclure le fichier contenant la classe FormulaireModel
 require_once '../model/FormulaireModel.php';

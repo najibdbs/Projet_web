@@ -23,6 +23,21 @@ class DemandeModel {
             return false;
         }
     }
+    // Méthode pour récupérer une demande par son ID.
+    public function getDemandeById($id) {
+    // Préparation de la requête SQL pour sélectionner une demande spécifique.
+        $stmt = $this->db->prepare("SELECT * FROM demande WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_assoc();
+    }
+    // Méthode pour mettre à jour une demande existante dans la base de données.
+    public function updateDemande($id, $email, $emailperso, $telephone, $problemetype, $description, $objet, $statut) {
+    // Préparation de la requête SQL pour la mise à jour d'une demande.
+        $stmt = $this->db->prepare("UPDATE demande SET email=?, emailperso=?, telephone=?, problemetype=?, description=?, objet=?, statut=? WHERE id=?");
+        $stmt->bind_param("sssssssi", $email, $emailperso, $telephone, $problemetype, $description, $objet, $statut, $id);
+        return $stmt->execute();
+    }
     
 }
 ?>

@@ -1,32 +1,11 @@
-<?php
-session_start();
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $login = $_POST["login"];
-    $password = $_POST["password"];
-
-    // Vérifier les informations de connexion (vous devrez implémenter cette partie)
-    if ($login == "superadmin" && $password == "aDmin@2024") {
-        // Les informations d'identification sont correctes, marquer l'utilisateur comme authentifié
-        $_SESSION["authenticated"] = true;
-    
-        // Rediriger vers la page d'affichage des demandes encodées
-        header("Location: ../view/affiche.demande.php");
-        exit();
-    } else {
-        // Informations d'identification incorrectes, afficher un message d'erreur
-        $errorMessage = "Identifiant ou mot de passe incorrect.";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
+    <title>Connexion</title>
     <style>
-        /* Styles spécifiques pour la page login.php */
-        body {
+         /* Styles spécifiques pour la page login.php */
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -92,13 +71,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         button[type="submit"]:hover {
             background-color: #2980b9;
         }
+
     </style>
-    <title>Connexion</title>
 </head>
 <body>
     <div class="login-container">
         <h1>Connexion</h1>
-        <form action="demandes.php" method="POST">
+        <form action="../view/affiche.demande.php" method="POST">
             <div class="form-field">
                 <label for="login">Nom d'utilisateur:</label>
                 <input type="text" name="login" required>
@@ -110,6 +89,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="form-field">
                 <button type="submit">Se connecter</button>
             </div>
+            <?php
+            if (!empty($errorMessage)) {
+                echo '<p style="color: red;">' . $errorMessage . '</p>';
+            }
+            ?>
         </form>
     </div>
 </body>

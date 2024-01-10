@@ -59,11 +59,7 @@
             text-align: center;
             margin-top: 20px;
         }
-        .button-creat {
-            text-align: center;
-            margin-top: 20px;
-        }
-
+        
         .return-button, a {
             background-color: #3498db;
             color: white;
